@@ -40,15 +40,15 @@
 		try{
 			var obj = $.evalJSON(str);
 			classesStrArray = new Array();
-			result =  convertJava(obj , opts.rootClassName , opts);
+			result =  convert(obj , opts.rootClassName , opts);
 
-			alert(result);
+			return result;
 		}catch( e ){
 			alert( e );
 		}
 	};
 
-	function convertJava(obj , rootClassName , opts)
+	function convert(obj , rootClassName , opts)
 	{
 		var result = getHeader(rootClassName , opts);
 
@@ -68,19 +68,19 @@
 				 }
 			 }else if (val instanceof Date) {
 				 result += getVariableDeclaration("Date" , pname , opts);
-	        }else if(typeof obj === 'object'){
-	        	//className = ClassName
-	        	var className = pname.substr(0,1).toUpperCase() + pname.substr(1);
-	        	getVariableDeclaration(className , pname , opts);
+			 }else if(typeof obj === 'object'){
+				 //className = ClassName
+				 var className = pname.substr(0,1).toUpperCase() + pname.substr(1);
+				 result += getVariableDeclaration(className , pname , opts);
 
-	        	//recurrent
-	        	if((val instanceof Array)){
-		        	convertJava(val[0] , className , opts);
+				 //recurrent
+				 if((val instanceof Array)){
+					 convert(val[0] , className , opts);
 
-	        	}else{
-	        		convertJava(val , className , opts);
-	        	}
-	        }
+				 }else{
+					 convert(val , className , opts);
+				 }
+			 }
 		}
 		result += getFooter(opts);
 

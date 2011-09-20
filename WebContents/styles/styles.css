@@ -1,0 +1,73 @@
+/** wrapper */
+
+@IMPORT url("buttons/buttons.css");
+
+#wrapper{
+	width: 700px;
+	margin: 0px auto;
+}
+
+#wrapper h2{
+	font-size: large;
+	color:#00c400;
+	border-style:dotted;
+	border-width:0px 0px 1px 0px;
+	border-color:#cccccc;
+	margin-bottom: 10px;
+}
+
+/**  header */
+#header{
+	margin:0px auto;
+	text-align:left;
+	border-bottom:dotted #999999;
+}
+
+#header h1{
+	padding-top: 7px;
+	margin-top:3px;
+	margin-left:8px;
+}
+
+#header h1 a{
+	font-size:20px;
+	text-decoration:none;
+	color:#009400;
+}
+
+#header h2{
+	margin:15px 0 10px 50px;
+	color:#009400;
+	vertical-align:bottom;
+}
+
+#json_text{
+	width: 300px;
+	height:300px;
+}
+
+#genarated{
+	width: 500px;
+}
+
+.buttons{
+	list-style:none;
+	float: left;
+}
+
+.buttons li{
+	padding-left:10px;
+	float: left;
+}
+
+#genarated textarea{
+	text-align:left;
+	margin:0px auto;
+	border:1px solid;
+	width: 480px;
+}
+
+/** footer */
+#footer{
+	height:20px;
+}

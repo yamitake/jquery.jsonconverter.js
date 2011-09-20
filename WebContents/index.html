@@ -2,36 +2,91 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Yapr. | jquery.yapelengine.js</title>
+		<title>Yapr. | jquery.jsonconverter.js</title>
+		<link rel="stylesheet" href="./styles/styles.css" type="text/css" media="screen" />
 	</head>
 	<body>
 		<div id="wrapper">
 			<div id="header">
 				<h1>
 					<a id="top" href="#">
-						Yapr. | jquery.yapelengine.js
+						Yapr. | jquery.jsonconverter.js
 					</a>
 				</h1>
 			</div>
 
-			<h2>jquery.yapelengine.js</h2>
-			<div id="type1">loading</div>
+			<h2>jquery.jsonconverter.js</h2>
+			<p>
+				このライブラリは、jsonデータをもとにJavaやphpのクラスの定義に変換するライブラリです。
+				※あくまで簡易なものであり、開発の補助としてお使いください。
 
-			<div>
-				<textarea id="json_text" rows="10" cols="10"></textarea>
-			</div>
+				<br /><br />
+				This library is a library changed into the definition of Java or the class of php based on json data.
+* Please be simple strictly and use as assistance of development.
 
-			<div>
-				eval();
 
-				<div>
-					<a href="javascript:void(0);" onclick='$.jsonconvert($("#json_text").val())'>toJava</a>
-				</div>
-			</div>
+				<ol>
+					<li>Plase input json text.   ex){&quot;hp&quot;:100 , &quot;speed&quot;:20 , &quot;job&quot;:{&quot;name&quot;:&quot;wizard&quot; , &quot;magic&quot;:100}}</li>
+					<li>Please push a button. </li>
+					<li>Plase, copy & Paste  the outputted    sources  to your file. Please correct timely if needed. </li>
+				</ol>
+			</p>
+
+			<table>
+				<tbody>
+					<tr>
+						<td><h3>json text</h3></td>
+						<td><h3>genarated class</h3></td>
+					</tr>
+					<tr>
+						<td>
+							<div>
+								ClassName:<input type="text" id="classname" value="Sample" />
+								<textarea id="json_text" rows="10" cols="10"></textarea>
+							</div>
+							<ul class="buttons">
+								<li><a class="button green medium" href="javascript:void(0);" onclick='convert("java")'>toJava</a></li>
+								<li><a class="button orange medium" href="javascript:void(0);" onclick='convert("php")'>toPhp</a></li>
+							</ul>
+						</td>
+						<td>
+							<div>
+								<div id="genarated">
+									Exsample.
+									<textarea cols="10" rows="10" type="text" style="width: 570px; height: 241px;">class Sample{
+	public var $completed_in;
+	public var $max_id;
+	public var $max_id_str;
+	public var $next_page;
+	public var $page;
+	public var $query;
+	public var $refresh_url;
+	public var $results;
+	public var $results_per_page;
+	public var $since_id;
+	public var $since_id_str;
+}
+</textarea>
+								</div>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
 
 			<script type="text/javascript" src="./scripts/lib/jquery-1.6.3.min.js"></script>
 			<script type="text/javascript" src="./scripts/lib/jquery.json-2.3.js"></script>
 			<script type="text/javascript" src="./scripts/lib/jquery.jsonconvert.js"></script>
+			<script type="text/javascript" >
+				function convert(type){
+					result = $.jsonconvert($("#json_text").val() , {"rootClassName":$("#classname").val() , "type":type});
+
+					$("#genarated").html("");
+					for(var i = result.length -1; i >= 0; i--){
+						$('<textarea type="text" rows="10" cols="10">' + result[i]  + '</textarea>').appendTo("#genarated");
+					}
+				}
+			</script>
 
 			<div id="footer">
 				Copyright (C) yapr All Rights Reserved.
