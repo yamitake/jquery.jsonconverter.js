@@ -51,9 +51,9 @@
 						</td>
 						<td>
 							<div>
-								<div id="genarated">
+								<div id="generated">
 									Exsample.
-									<textarea cols="10" rows="10" type="text" style="width: 570px; height: 241px;">class Sample{
+									<textarea cols="10" rows="10" type="text" >class Sample{
 	public var $completed_in;
 	public var $max_id;
 	public var $max_id_str;
@@ -81,9 +81,9 @@
 				function convert(type){
 					result = $.jsonconvert($("#json_text").val() , {"rootClassName":$("#classname").val() , "type":type});
 
-					$("#genarated").html("");
+					$("#generated").html("");
 					for(var i = result.length -1; i >= 0; i--){
-						$('<textarea type="text" rows="10" cols="10">' + result[i]  + '</textarea>').appendTo("#genarated");
+						$('<textarea type="text" rows="10" cols="10">' + result[i]  + '</textarea>').appendTo("#generated");
 					}
 				}
 			</script>

@@ -45,8 +45,7 @@
 	width: 300px;
 	height:300px;
 }
-
-#genarated{
+#generated{
 	width: 500px;
 }
 
@@ -60,9 +59,10 @@
 	float: left;
 }
 
-#genarated textarea{
+#generated textarea{
 	text-align:left;
-	margin:0px auto;
+	margin:10px auto;
+	padding:10px;
 	border:1px solid;
 	width: 480px;
 }
