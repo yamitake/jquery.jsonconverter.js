@@ -1,7 +1,5 @@
 /** wrapper */
 
-@IMPORT url("buttons/buttons.css");
-
 #wrapper{
 	width: 700px;
 	margin: 0px auto;
@@ -39,32 +37,6 @@
 	margin:15px 0 10px 50px;
 	color:#009400;
 	vertical-align:bottom;
-}
-
-#json_text{
-	width: 300px;
-	height:300px;
-}
-#generated{
-	width: 500px;
-}
-
-.buttons{
-	list-style:none;
-	float: left;
-}
-
-.buttons li{
-	padding-left:10px;
-	float: left;
-}
-
-#generated textarea{
-	text-align:left;
-	margin:10px auto;
-	padding:10px;
-	border:1px solid;
-	width: 480px;
 }
 
 /** footer */

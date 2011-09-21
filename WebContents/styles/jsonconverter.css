@@ -1,0 +1,27 @@
+@IMPORT url("buttons/buttons.css");
+
+#json_text{
+	width: 300px;
+	height:300px;
+}
+#generated{
+	width: 500px;
+}
+
+.buttons{
+	list-style:none;
+	float: left;
+}
+
+.buttons li{
+	padding-left:10px;
+	float: left;
+}
+
+#generated textarea{
+	text-align:left;
+	margin:10px auto;
+	padding:10px;
+	border:1px solid;
+	width: 480px;
+}
